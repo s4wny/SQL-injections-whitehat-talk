@@ -16,3 +16,7 @@ input,textarea,select,button,option,html,body{font-family:system-ui,"Helvetica N
 	border: 1px solid transparent;
 	border-radius: .25rem;
 }
+
+h1 {
+	margin-top: 0.3em;
+}
