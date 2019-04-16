@@ -6,6 +6,6 @@
 <?php endif; ?>
 <form action="" method="post">
 	<input type="text" name="email" placeholder="user@calpoly.edu"><br>
-	<input type="text" name="password" placeholder="Password"><br>
+	<input type="text" name="password" placeholder="Password" autocomplete="off"><br>
 	<input type="submit" name="submit" value="Login">
 </form>
