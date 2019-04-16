@@ -1,3 +1,4 @@
+<p>Welcome back <strong><?= $_SESSION['signed_in'] ?></strong>!</p>
 <h1>Course info</h1>
 <p>Select a course you want to know more about.</p>
 <form action="" method="get">

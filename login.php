@@ -6,6 +6,7 @@ require 'commons.php';
 if(isset($_POST["submit"])) {
 	try {
     	$dbh = new PDO("mysql:host=localhost;charset=utf8;dbname=". DB_DB, DB_USER, DB_PASS);
+		$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     	$sth = $dbh->prepare("
     		SELECT COUNT(*) FROM users
     		WHERE email='". $_POST['email'] ."'
@@ -14,7 +15,7 @@ if(isset($_POST["submit"])) {
 		$sth->execute();
 		
 		// Email and password matched with a entry in the users table!
-		if($sth->fetchColumn() == 1) {
+		if($sth->fetchColumn() > 0) {
 			$_SESSION["signed_in"] = $_POST['email'];
 			header("Location: course_info.php");
 			exit;
